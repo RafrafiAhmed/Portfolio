@@ -2,8 +2,8 @@ const express=require('express');
 const path=require('path');
 const app=express();
 
-app.use(express.static(__dirname + '/dist'));
+app.use(express.static(__dirname + '/dist/personal-portfolio-angular'));
 app.get('/*', function(req, res){
-    res.sendFile(path.join(_dirname+'/dist/index.js'));
+    res.sendFile('index.html', {root: 'dist/personal-portfolio-angular'});
 });
 app.listen(process.env.PORT || 8080);
